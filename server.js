@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const router = require("./view/RegisterView");
+const ProductRouter = require("./view/ProductView");
 const app = express();
 app.use(express.json());
 dotenv.config();
@@ -21,6 +22,7 @@ mongoose
   //app router
 
   app.use('/', router)
+  app.use('/', ProductRouter)
 
 
 app.listen(port, () => {
