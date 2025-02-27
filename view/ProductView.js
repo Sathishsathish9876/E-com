@@ -14,7 +14,7 @@ const {
 ProductRouter.get("/products", getProduct);
 ProductRouter.post("/products", upload, postProduct);
 ProductRouter.get("/products/:id", getSingleProduct);
-ProductRouter.patch("/products/:id", updateProduct);
+ProductRouter.patch("/products/:id",upload, updateProduct);
 ProductRouter.delete("/products/:id", deleteProduct);
 
 module.exports = ProductRouter;
