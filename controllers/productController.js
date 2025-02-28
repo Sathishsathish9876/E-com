@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
-const Product = require("../Models/ProductSchema");
+const Product = require("../models/productSchema");
 
 // ✅ Ensure "uploads/" folder exists before storing files
 const uploadDir = path.join(__dirname, "../uploads");
@@ -125,7 +125,7 @@ const getSingleProduct = async (req, res) => {
 // ✅ UPDATE PRODUCT BY ID
 const updateProduct = async (req, res) => {
     try {
-      console.log("Updating product with ID:", req.params.id); // Debugging
+      console.log("Updating product with ID:", req.params.id); 
   
       if (!req.params.id) {
         return res.status(400).json({
@@ -160,7 +160,7 @@ const updateProduct = async (req, res) => {
       });
   
     } catch (err) {
-      console.error("Update error:", err.message); // Debugging
+      console.error("Update error:", err.message); 
       res.status(400).json({
         status: "fail",
         message: "Error Updating Product",
